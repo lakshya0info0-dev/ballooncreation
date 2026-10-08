@@ -1,5 +1,14 @@
-# Restoration
-- [x] Restore supplied Index and missing supporting components.
-- [x] Recreate visual styling, photos and animations.
-- [x] Verify navigation, occasion selection and rotating text.
-- [ ] Connect real phone and WhatsApp details (blocked: number not supplied).
+# Balloon Creation
+- [x] Build luxury single-page experience with five event categories and subtle scroll motion.
+- [x] Connect concierge inquiry storage and the provided call/WhatsApp number.
+- [x] Verify mobile layout and a real inquiry submission.
+- [x] Navbar tagline “We Decorate Your Happiness” and the owner’s circular logo photo in navbar + hero + browser tab icon.
+- [x] Apply selected ultra-royal champagne/ivory look, rose-gold accents and refined glass cards.
+- [x] Add early cinematic reveals, image drift and gold hover shine; verify layout, reduced motion and consultation links.
+- [x] Rotate the owner’s 15 taglines in the hero headline with larger, more readable typography.
+- [x] Replace the slide with a slow smooth crossfade between taglines; verify on desktop and phone widths.
+- [x] Prevent clipping across all 15 taglines, slightly enlarge the brand and logos, and use a six-second hold with softer fades; verified at five screen widths.
+- [x] Raise the navbar company name and both circular photos to a clearly noticeable size without changing the champagne/ivory theme; verified at five screen widths.
+- [x] Increase the navbar tagline “We Decorate Your Happiness” once more; verified no clipping at 1280/390/320.
+- [x] Middle section: 15 celebration lines on a six-second cycle with a three-second soft crossfade rising bottom-to-top, gold aura and silver sparkles; verified no clipping or side scrolling at five widths.
+- [ ] Replace middle-section blobs with horizontal left-to-right gold ribbons and natural silver dust; preserve text and verify motion/layout.

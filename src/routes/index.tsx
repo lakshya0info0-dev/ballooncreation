@@ -6,7 +6,8 @@ import { Concierge } from '@/components/balloon/concierge';
 import { RotatingLines } from '@/components/balloon/rotating-lines';
 import { celebrations, contact } from '@/lib/celebrations';
 import hero from '@/assets/celebration-hero.jpg';
-import logo from '@/assets/profile-logo.jpg';
+import logoAsset from '@/assets/profile-logo.jpg.asset.json';
+const logo = logoAsset.url;
 
 export const Route = createFileRoute('/')({
   head: () => ({ meta: [
@@ -95,7 +96,7 @@ function Index() {
             <span key={`in-${line}`} className="tagline tagline-in">{current[0]} <em>{current[1]}</em></span>
           </h1>
           <p>Indore’s premier boutique for bespoke flower &amp; balloon aesthetics. Expert setup in 2 hours.</p>
-          <div className="hero-actions"><Button variant="luxury" asChild><a href={contact.whatsapp ? `${contact.whatsapp}?text=${encodeURIComponent('Hello Balloon Creation! I would love to plan a bespoke celebration.')}` : '#concierge'} target={contact.whatsapp ? '_blank' : undefined} rel="noreferrer"><MessageCircle />Let’s talk on WhatsApp<ArrowUpRight /></a></Button><Button variant="glass" asChild><a href={contact.phone ? `tel:${contact.phone}` : '#concierge'}><Phone />Call our concierge</a></Button></div>
+          <div className="hero-actions"><Button variant="luxury" asChild><a href={`${contact.whatsapp}?text=${encodeURIComponent('Hello Balloon Creation! I would love to plan a bespoke celebration.')}`} target="_blank" rel="noreferrer"><MessageCircle />Let’s talk on WhatsApp<ArrowUpRight /></a></Button><Button variant="glass" asChild><a href={`tel:${contact.phone}`}><Phone />Call our concierge</a></Button></div>
           <div className="hero-footnote"><span className="little-line" /> THOUGHTFULLY DESIGNED. BEAUTIFULLY REMEMBERED.</div>
         </div>
         <a className="explore-scroll" href="#portfolio" aria-label="Explore our creations"><span>EXPLORE</span><ArrowDown size={17} /></a>
