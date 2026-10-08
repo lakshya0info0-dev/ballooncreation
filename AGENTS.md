@@ -9,8 +9,11 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-## App structure
-- Keep the restored supplied Index as a single scrolling page with its original anchors; preserving the source's navigation is the restoration goal.
-- Put recreated celebration data in `src/lib/celebrations.ts` and supporting presentation in `src/components/balloon/`; the uploaded Index imports these modules.
-- Define all visual tokens and animations in `src/styles.css`; this keeps the recreated design consistent.
-- Until real contact details are supplied, contact actions lead to the concierge and enquiries explicitly remain unsent; never invent a recipient.
+## Architecture
+- Keep the single-page event experience at the index route; share celebration data and isolate the concierge form to minimize duplication.
+- Define all visual styling as global semantic tokens and named styles, with luxury and glass Button variants to preserve consistent controls.
+- Submit concierge inquiries through a validated public server function and service-only database RPC; serialize phone-based rate limiting in PostgreSQL so requests remain private and limits survive server restarts.
+- Keep generated editorial photography bundled in the app; replace it with real portfolio photography when the owner supplies it.
+- Use one IntersectionObserver for early, one-time nested scroll reveals and CSS-only ambient/hover motion; reduced-motion users see all content without animation to keep the experience lightweight and accessible.
+- Stack invisible, aria-hidden tagline sizing copies in the headline grid so its longest sentence reserves stable space at every width without browser measurement.
+- Render the middle text backdrop with clipped SVG ribbons and CSS transform/opacity motion; keep decorative motion independent of text sizing and rotation to prevent layout shifts.
