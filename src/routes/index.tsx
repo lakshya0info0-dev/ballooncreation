@@ -4,6 +4,7 @@ import { ArrowDown, ArrowUpRight, Clock3, Gem, MapPin, Menu, MessageCircle, Phon
 import { Button } from '@/components/ui/button';
 import { Concierge } from '@/components/balloon/concierge';
 import { RotatingLines } from '@/components/balloon/rotating-lines';
+import { CategoryMarquee } from '@/components/balloon/category-marquee';
 import { celebrations, contact } from '@/lib/celebrations';
 import hero from '@/assets/celebration-hero.jpg';
 import logoAsset from '@/assets/profile-logo.jpg.asset.json';
@@ -103,6 +104,7 @@ function Index() {
         <div className="hero-caption"><span>THE ART OF CELEBRATION</span><span>BALLOON CREATION · INDORE</span></div>
       </section>
       <div className="brand-strip"><div className="page-width"><span><MapPin size={14} /> INDORE’S BOUTIQUE EVENT ATELIER</span><span className="strip-center">Extraordinary occasions. Effortlessly yours.</span><span>FLOWERS <span className="strip-dot">✦</span> BALLOONS <span className="strip-dot">✦</span> MEMORIES</span></div></div>
+      <CategoryMarquee />
       <section className="portfolio section-space page-width" id="portfolio">
         <div className="section-heading reveal"><div><span className="eyebrow">A WORLD OF CELEBRATIONS</span><RotatingLines /></div><div className="section-intro"><p>From grand gestures to intimate joys,<br />we make every occasion unmistakably yours.</p><span>EXPLORE OUR SIGNATURE CREATIONS <ArrowDown size={14} /></span></div></div>
         <div className="portfolio-grid">{celebrations.map((item, index) => <article className={`creation reveal creation-${index + 1}`} key={item.name}>
