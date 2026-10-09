@@ -375,39 +375,31 @@ h2 em { font-weight: 600; color: var(--rose-gold); }
 @keyframes fluid-flow { from { transform: translateX(0); } to { transform: translateX(25%); } }
 @keyframes dust-fall { 0% { opacity: 0; transform: translate(0,-8px); } 25% { opacity: .8; } 100% { opacity: 0; transform: translate(10px,48px); } }
 
-/* Equal repeated groups keep the rightward loop seamless without JS timers. */
+/* Embla owns the single track transform and pointer gestures. */
 .category-section { padding-block: 52px 35px; border-bottom: 1px solid var(--border); background: var(--category-glass); }
 .category-heading { margin-bottom: 24px; }
 .category-heading h2 { margin-top: 8px; font-family: var(--font-sans); font-size: 24px; font-weight: 500; line-height: 1.4; }
-.category-window { overflow: hidden; padding-block: 18px; outline-offset: -5px; }
-.category-track { display: flex; width: max-content; animation: category-rightward 180s linear infinite; will-change: transform; }
-.category-group { display: flex; flex: none; gap: 28px; margin: 0; padding: 0 28px 0 0; list-style: none; }
-.category-item { width: 152px; flex: none; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.category-window { overflow: hidden; padding-block: 18px; outline-offset: -5px; cursor: grab; }
+.category-window:active { cursor: grabbing; }
+.category-track { display: flex; margin: 0; padding: 0; list-style: none; touch-action: pan-y pinch-zoom; user-select: none; }
+.category-item { width: 152px; margin-right: 28px; flex: none; display: flex; flex-direction: column; align-items: center; gap: 20px; }
 .category-orb { position: relative; display: block; width: 124px; aspect-ratio: 1; flex: none; border-radius: 50%; padding: 7px; border: 1px solid var(--glass-border); background: var(--category-glass); backdrop-filter: blur(12px); box-shadow: var(--shadow-mark); overflow: hidden; isolation: isolate; transition: transform .6s var(--motion-ease), box-shadow .6s, border-color .6s; }
 .category-orb img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
 .category-orb::after { content: ''; position: absolute; inset: 0; border-radius: inherit; background: var(--category-shine); opacity: .75; transform: translateX(-140%) skewX(-15deg); pointer-events: none; }
 .category-label { min-height: 42px; width: 100%; text-align: center; font-family: var(--font-sans); font-size: 13px; font-weight: 500; line-height: 1.6; color: var(--foreground); overflow-wrap: break-word; }
-.category-window:focus-within .category-track { animation-play-state: paused; }
 @media (hover:hover) {
-  .category-track:has(.category-item:hover) { animation-play-state: paused; }
   .category-item:hover .category-orb { transform: scale(1.1); box-shadow: var(--shadow-hover); border-color: var(--gold); }
   .category-item:hover .category-orb::after { animation: gold-sweep 1.4s var(--motion-ease); }
 }
-@keyframes category-rightward { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 @media(max-width:540px) {
   .category-section { padding-block: 34px 20px; }
   .category-heading { margin-bottom: 16px; }
   .category-heading h2 { font-size: 20px; }
   .category-heading .eyebrow { font-size: 10px; }
-  .category-group { gap: 18px; padding-right: 18px; }
-  .category-item { width: 116px; gap: 17px; }
+  .category-item { width: 116px; margin-right: 18px; gap: 17px; }
   .category-orb { width: 94px; padding: 5px; }
   .category-label { font-size: 12px; min-height: 39px; }
-  .category-track { animation-duration: 145s; }
 }
 @media(prefers-reduced-motion:reduce) {
-  .category-window { overflow-x: auto; }
-  .category-track { transform: none; will-change: auto; }
-  .category-group[aria-hidden="true"] { display: none; }
   .category-item:hover .category-orb { transform: none; }
 }

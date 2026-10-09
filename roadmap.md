@@ -13,3 +13,4 @@
 - [x] Middle section: 15 celebration lines on a six-second cycle with a three-second soft crossfade rising bottom-to-top, gold aura and silver sparkles; verified no clipping or side scrolling at five widths.
 - [x] Replace middle-section blobs with horizontal left-to-right gold ribbons and natural silver dust; preserve text and verify motion/layout.
 - [x] Add the 20 premium category circles beneath the brand strip with seamless rightward scrolling, hover pause/shine and mobile verification.
+- [x] Replace category marquee with lightweight Embla auto-scroll; verify drag/swipe and preserve original brand hover shine.
