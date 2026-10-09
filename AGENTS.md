@@ -17,3 +17,4 @@
 - Use one IntersectionObserver for early, one-time nested scroll reveals and CSS-only ambient/hover motion; reduced-motion users see all content without animation to keep the experience lightweight and accessible.
 - Stack invisible, aria-hidden tagline sizing copies in the headline grid so its longest sentence reserves stable space at every width without browser measurement.
 - Render the middle text backdrop with clipped SVG ribbons and CSS transform/opacity motion; keep decorative motion independent of text sizing and rotation to prevent layout shifts.
+- Keep category browsing in an isolated CSS marquee with equal duplicated groups and bundled optimized thumbnails; pause on hover/focus and use a single manually scrollable group for reduced motion to avoid timers and duplicate announcements.
