@@ -89,7 +89,7 @@ function Index() {
         <div className="hero-wash" />
         <div className="page-width hero-content">
           <img src={logo} className="hero-mark" alt="Balloon Creation emblem" width={512} height={512} />
-          <span className="eyebrow hero-eyebrow"><span className="little-line" /><span className="hero-rise"><span className="hero-descriptor">We Decorate Your Happiness</span></span></span>
+          <span className="eyebrow hero-eyebrow"><span className="little-line" /> BEAUTIFULLY BEYOND ORDINARY</span>
           <h1 className="hero-title" aria-live="polite">
             {taglines.map(([start, end], i) => <span className="tagline-sizer" aria-hidden="true" key={`size-${i}`}>{start} <em>{end}</em></span>)}
             {out && <span key={`out-${fading}`} aria-hidden="true" className="tagline tagline-out">{out[0]} <em>{out[1]}</em></span>}
