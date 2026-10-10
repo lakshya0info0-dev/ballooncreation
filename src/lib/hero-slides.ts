@@ -6,7 +6,7 @@ import baby from '@/assets/baby-shower.jpg';
 import devotional from '@/assets/devotional.jpg';
 
 const thumbs = import.meta.glob<string>('/src/assets/categories/*.webp', { eager: true, import: 'default' });
-const cat = (n: number) => thumbs[`/src/assets/categories/category-${String(n).padStart(2, '0')}.webp`];
+const cat = (n: number): string => thumbs[`/src/assets/categories/category-${String(n).padStart(2, '0')}.webp`] ?? hero;
 
 // Exact order requested by the owner. Replace with real portfolio photos when supplied.
 export const heroSlides: { name: string; image: string }[] = [
