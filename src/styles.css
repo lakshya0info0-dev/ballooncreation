@@ -409,3 +409,12 @@ h2 em { font-weight: 600; color: var(--rose-gold); }
   .category-item:hover .category-orb, .category-item:active .category-orb, .category-item:focus-within .category-orb { transform: none; }
   .category-item:hover .category-label, .category-item:active .category-label, .category-item:focus-within .category-label { animation: none; }
 }
+/* Category v3: editorial labels, synced 4s orb + label shine loop */
+.category-label { font-family: var(--font-display); font-size: 17px; font-weight: 700; font-style: italic; letter-spacing: .03em; line-height: 1.25; background-image: linear-gradient(115deg, var(--gold) 40%, var(--fluid-cream) 50%, var(--gold) 60%), var(--metallic-text); }
+@media(max-width:540px) { .category-label { font-size: 15px; } }
+@keyframes orb-shine-loop { 0% { transform: translateX(-140%) skewX(-15deg); } 35%,100% { transform: translateX(140%) skewX(-15deg); } }
+@keyframes label-shine-loop { 0% { background-position: 100% 0; } 50%,100% { background-position: 0% 0; } }
+@media (prefers-reduced-motion:no-preference) {
+  .category-item:is(:hover,:active,:focus-within) .category-orb::after { animation: orb-shine-loop 4s var(--motion-ease) infinite; }
+  .category-item:is(:hover,:active,:focus-within) .category-label { animation: label-shine-loop 4s linear 1.5s infinite; }
+}
