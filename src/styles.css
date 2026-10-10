@@ -431,3 +431,13 @@ h2 em { font-weight: 600; color: var(--rose-gold); }
   .eyebrow { font-size: 12.5px; }
   .hero-footnote,.brand-strip span,.image-tag,.portfolio-note > span,.hero-caption { font-size: 12px; }
 }
+
+/* Hero service slider + dynamic label */
+.hero-slide { opacity: 0; transition: opacity 1.4s ease-in-out; }
+.hero-slide.is-active { opacity: 1; }
+.service-badge { position: absolute; right: 36px; bottom: 112px; z-index: 3; display: flex; align-items: center; gap: 12px; padding: 14px 24px; border-radius: 999px; background: oklch(0.2 0.02 60 / .42); backdrop-filter: blur(16px) saturate(140%); border: 1px solid oklch(0.8 0.11 80 / .7); box-shadow: 0 12px 40px -12px oklch(0.2 0.02 60 / .5); overflow: hidden; }
+.service-dot { width: 8px; height: 8px; border-radius: 50%; background: oklch(0.82 0.12 82); box-shadow: 0 0 12px oklch(0.82 0.12 82); flex: none; }
+.service-name { font-family: var(--font-display); font-style: italic; font-weight: 600; font-size: 24px; letter-spacing: .02em; color: oklch(0.97 0.02 85); white-space: nowrap; animation: service-in .9s ease both; }
+@keyframes service-in { from { opacity: 0; transform: translateY(10px); filter: blur(4px); } to { opacity: 1; transform: none; filter: none; } }
+@media (max-width: 800px) { .service-badge { right: 22px; bottom: 24px; padding: 10px 18px; } .service-name { font-size: 19px; } }
+@media (prefers-reduced-motion: reduce) { .hero-slide { transition: none; } .service-name { animation: none; } }
