@@ -402,6 +402,10 @@ h2 em { font-weight: 600; color: var(--rose-gold); }
   .category-orb { width: 94px; padding: 5px; }
   .category-label { font-size: 12px; min-height: 39px; }
 }
+.category-item:active .category-orb, .category-item:focus-within .category-orb { transform: scale(1.1); box-shadow: var(--shadow-hover); border-color: var(--gold); }
+.category-item:active .category-orb::after, .category-item:focus-within .category-orb::after { animation: gold-sweep 1.4s var(--motion-ease); }
+.category-item:active .category-label, .category-item:focus-within .category-label { animation: label-shine 2s linear 1.5s infinite; }
 @media(prefers-reduced-motion:reduce) {
-  .category-item:hover .category-orb { transform: none; }
+  .category-item:hover .category-orb, .category-item:active .category-orb, .category-item:focus-within .category-orb { transform: none; }
+  .category-item:hover .category-label, .category-item:active .category-label, .category-item:focus-within .category-label { animation: none; }
 }
