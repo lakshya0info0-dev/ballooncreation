@@ -418,3 +418,16 @@ h2 em { font-weight: 600; color: var(--rose-gold); }
   .category-item:is(:hover,:active,:focus-within) .category-orb::after { animation: orb-shine-loop 4s var(--motion-ease) infinite; }
   .category-item:is(:hover,:active,:focus-within) .category-label { animation: label-shine-loop 2s linear 1s infinite; }
 }
+
+/* Readability: larger small labels */
+.eyebrow { font-size: 14px; letter-spacing: .08em; }
+.brand-descriptor { font-size: 13px; }
+.main-nav { font-size: 15px; }
+.hero-footnote,.explore-scroll,.hero-caption,.hero-caption span:last-child,.brand-strip span,.section-intro > span,.image-tag,.portfolio-note > span { font-size: 13px; }
+.creation-index,.standard-detail { font-size: 14px; }
+.creation-caption p { font-size: 14.5px; }
+.section-intro p,.standard-heading p { font-size: 15.5px; }
+@media (max-width: 640px) {
+  .eyebrow { font-size: 12.5px; }
+  .hero-footnote,.brand-strip span,.image-tag,.portfolio-note > span,.hero-caption { font-size: 12px; }
+}
