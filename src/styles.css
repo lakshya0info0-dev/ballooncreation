@@ -416,5 +416,5 @@ h2 em { font-weight: 600; color: var(--rose-gold); }
 @keyframes label-shine-loop { 0% { background-position: 100% 0; } 50%,100% { background-position: 0% 0; } }
 @media (prefers-reduced-motion:no-preference) {
   .category-item:is(:hover,:active,:focus-within) .category-orb::after { animation: orb-shine-loop 4s var(--motion-ease) infinite; }
-  .category-item:is(:hover,:active,:focus-within) .category-label { animation: label-shine-loop 4s linear 1.5s infinite; }
+  .category-item:is(:hover,:active,:focus-within) .category-label { animation: label-shine-loop 2s linear 1s infinite; }
 }
